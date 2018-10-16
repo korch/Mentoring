@@ -1,0 +1,13 @@
+F:\Projects\Helper\WinForms\bin\Debug\WinForms.exe.config
+F:\Projects\Helper\WinForms\bin\Debug\WinForms.exe
+F:\Projects\Helper\WinForms\bin\Debug\WinForms.pdb
+F:\Projects\Helper\WinForms\bin\Debug\Helper.dll
+F:\Projects\Helper\WinForms\bin\Debug\Helper.pdb
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.csprojAssemblyReference.cache
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.Form1.resources
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.Properties.Resources.resources
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.csproj.GenerateResource.cache
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.csproj.CoreCompileInputs.cache
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.csproj.CopyComplete
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.exe
+F:\Projects\Helper\WinForms\obj\Debug\WinForms.pdb
