@@ -1,0 +1,17 @@
+C:\Users\Yahor_Sabaleuski\source\repos\ExceptionHandling\StringToIntConverter\bin\Debug\StringToIntConverter.dll
+C:\Users\Yahor_Sabaleuski\source\repos\ExceptionHandling\StringToIntConverter\bin\Debug\StringToIntConverter.pdb
+C:\Users\Yahor_Sabaleuski\source\repos\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.csprojAssemblyReference.cache
+C:\Users\Yahor_Sabaleuski\source\repos\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.csproj.CoreCompileInputs.cache
+C:\Users\Yahor_Sabaleuski\source\repos\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.dll
+C:\Users\Yahor_Sabaleuski\source\repos\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.pdb
+F:\Projects\ExceptionHandling\StringToIntConverter\bin\Debug\StringToIntConverter.dll
+F:\Projects\ExceptionHandling\StringToIntConverter\bin\Debug\StringToIntConverter.pdb
+F:\Projects\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.csprojAssemblyReference.cache
+F:\Projects\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.csproj.CoreCompileInputs.cache
+F:\Projects\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.dll
+F:\Projects\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.pdb
+F:\Projects\Mentoring\Mentoring\ExceptionHandling\StringToIntConverter\bin\Debug\StringToIntConverter.dll
+F:\Projects\Mentoring\Mentoring\ExceptionHandling\StringToIntConverter\bin\Debug\StringToIntConverter.pdb
+F:\Projects\Mentoring\Mentoring\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.csproj.CoreCompileInputs.cache
+F:\Projects\Mentoring\Mentoring\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.dll
+F:\Projects\Mentoring\Mentoring\ExceptionHandling\StringToIntConverter\obj\Debug\StringToIntConverter.pdb
