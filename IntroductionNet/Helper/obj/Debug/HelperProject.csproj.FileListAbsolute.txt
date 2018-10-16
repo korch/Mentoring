@@ -1,0 +1,16 @@
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\bin\Debug\Helper.dll
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\bin\Debug\Helper.pdb
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\obj\Debug\HelperProject.csprojAssemblyReference.cache
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\obj\Debug\HelperProject.csproj.CoreCompileInputs.cache
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\obj\Debug\Helper.dll
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\obj\Debug\Helper.pdb
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\obj\Debug\Helper.Properties.Resources.resources
+C:\Users\Yahor_Sabaleuski\source\repos\Helper\Helper\obj\Debug\HelperProject.csproj.GenerateResource.cache
+F:\Projects\Helper\Helper\bin\Debug\Helper.dll
+F:\Projects\Helper\Helper\bin\Debug\Helper.pdb
+F:\Projects\Helper\Helper\obj\Debug\HelperProject.csprojAssemblyReference.cache
+F:\Projects\Helper\Helper\obj\Debug\Helper.Properties.Resources.resources
+F:\Projects\Helper\Helper\obj\Debug\HelperProject.csproj.GenerateResource.cache
+F:\Projects\Helper\Helper\obj\Debug\HelperProject.csproj.CoreCompileInputs.cache
+F:\Projects\Helper\Helper\obj\Debug\Helper.dll
+F:\Projects\Helper\Helper\obj\Debug\Helper.pdb
