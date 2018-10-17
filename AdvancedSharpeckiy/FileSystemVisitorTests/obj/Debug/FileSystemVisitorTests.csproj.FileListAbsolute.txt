@@ -1,0 +1,11 @@
+D:\Projects\Mentoring\FileSystemVisitorTests\bin\Debug\FileSystemVisitorTests.dll
+D:\Projects\Mentoring\FileSystemVisitorTests\bin\Debug\FileSystemVisitorTests.pdb
+D:\Projects\Mentoring\FileSystemVisitorTests\bin\Debug\nunit.framework.dll
+D:\Projects\Mentoring\FileSystemVisitorTests\bin\Debug\nunit.framework.pdb
+D:\Projects\Mentoring\FileSystemVisitorTests\bin\Debug\nunit.framework.xml
+D:\Projects\Mentoring\FileSystemVisitorTests\obj\Debug\FileSystemVisitorTests.csprojResolveAssemblyReference.cache
+D:\Projects\Mentoring\FileSystemVisitorTests\obj\Debug\FileSystemVisitorTests.csproj.CoreCompileInputs.cache
+D:\Projects\Mentoring\FileSystemVisitorTests\obj\Debug\FileSystemVisitorTests.dll
+D:\Projects\Mentoring\FileSystemVisitorTests\obj\Debug\FileSystemVisitorTests.pdb
+D:\Projects\Mentoring\FileSystemVisitorTests\bin\Debug\FileSystemVisitorProject.dll
+D:\Projects\Mentoring\FileSystemVisitorTests\bin\Debug\FileSystemVisitorProject.pdb
