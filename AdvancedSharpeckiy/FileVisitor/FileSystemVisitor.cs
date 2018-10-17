@@ -63,10 +63,11 @@ namespace FileVisitor
             }
        
             catch (UnauthorizedAccessException e) {
+                throw;
             }
 
             catch (DirectoryNotFoundException e) {
-                Console.WriteLine(e.Message);
+                throw;
             }
 
             if (files == null) {
@@ -89,8 +90,7 @@ namespace FileVisitor
                 return;
 
             var subDirectories = root.GetDirectories();
-            foreach (var dirInfo in subDirectories)
-            {
+            foreach (var dirInfo in subDirectories) {
                 DirectoryFinded?.Invoke(null, new FileEventHandler(dirInfo.Name, dirInfo.Parent?.Name));
                 _fileVisitorInfos.Add(new FileVisitorInfo { Name = dirInfo.Name, DirectoryName = dirInfo.Parent?.Name });
 
