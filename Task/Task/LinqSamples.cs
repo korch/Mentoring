@@ -25,8 +25,6 @@ namespace SampleQueries
 
 		private DataSource dataSource = new DataSource();
 
-		
-
         [Category("Restriction Operators")]
         [Title("Where - Task 001")]
         [Description("This sample return all customers who have orders sum more then specific values")]
@@ -118,8 +116,7 @@ namespace SampleQueries
         public void Linq005()
         {
             var customers = dataSource.Customers.Where(c => c.Orders.Length > 0)
-                  .Select(c => new
-                  {
+                  .Select(c => new {
                       customerName = c.CompanyName,
                       customerTotal = c.Orders.Select(o => o.Total).First(),
                       customerStartDate = c.Orders.Select(o => o.OrderDate).Min()
@@ -140,8 +137,7 @@ namespace SampleQueries
             var customers = dataSource.Customers
                 .Where(cu => !string.IsNullOrEmpty(cu.PostalCode))
                 .Where(c => c.PostalCode.Any(s => char.IsDigit(s)) || string.IsNullOrEmpty(c.Region) || !c.Phone.Contains("("))
-                  .Select(c => new
-                  {
+                  .Select(c => new {
                       customerName = c.CompanyName
                   });
 
@@ -158,25 +154,20 @@ namespace SampleQueries
         {
             var productGroups = dataSource.Products
                 .GroupBy(p => p.Category)
-                .Select(g => new
-                {
+                .Select(g => new {
                     Name = g.Key,
                     ProductsByStock = g.GroupBy(g2 => g2.UnitsInStock)
-                        .Select(s => new
-                        {
+                        .Select(s => new {
                             Name = s.Key,
                             Products = s.OrderBy(o => o.UnitPrice)
                         })
                 });
 
-            foreach (var group in productGroups)
-            {
+            foreach (var group in productGroups) {
                 ObjectDumper.Write($"Product category: {group.Name}");
-                foreach (var productByStock in group.ProductsByStock)
-                {
+                foreach (var productByStock in group.ProductsByStock) {
                     ObjectDumper.Write($"In Stock: {productByStock.Name}");
-                    foreach (var product in productByStock.Products)
-                    {
+                    foreach (var product in productByStock.Products) {
                         ObjectDumper.Write($"Product name: {product.ProductName} Price: {product.UnitPrice}");
                     }
                 }
@@ -227,8 +218,7 @@ namespace SampleQueries
 	    public void Linq010()
 	    {
 	        var statistic = dataSource.Customers
-	            .Select(c => new
-	            {
+	            .Select(c => new {
 	                c.CompanyName,
 	                Months = c.Orders.GroupBy(o => o.OrderDate.Month)
 	                    .Select(g => new { Month = g.Key, OrdersCount = g.Count() }),
@@ -239,23 +229,21 @@ namespace SampleQueries
 	                    .Select(g => new { g.Key.Year, g.Key.Month, OrdersCount = g.Count() })
 	            });
 
-	        foreach (var record in statistic)
-	        {
+	        foreach (var record in statistic) {
 	            ObjectDumper.Write($"Company name: {record.CompanyName}");
 	            ObjectDumper.Write("Months statistic:");
-	            foreach (var ms in record.Months)
-	            {
-	                ObjectDumper.Write($"Month: {ms.Month} Orders count: {ms.OrdersCount}");
+	            foreach (var month in record.Months) {
+	                ObjectDumper.Write($"Month: {month.Month} Orders count: {month.OrdersCount}");
 	            }
+
 	            ObjectDumper.Write("Years statistic:");
-	            foreach (var ys in record.Years)
-	            {
-	                ObjectDumper.Write($"Year: {ys.Year} Orders count: {ys.OrdersCount}");
+	            foreach (var year in record.Years) {
+	                ObjectDumper.Write($"Year: {year.Year} Orders count: {year.OrdersCount}");
 	            }
+
 	            ObjectDumper.Write("Year and month statistic:");
-	            foreach (var ym in record.YearMonth)
-	            {
-	                ObjectDumper.Write($"Year: {ym.Year} Month: {ym.Month} Orders count: {ym.OrdersCount}");
+                foreach (var yearMonth in record.YearMonth) {
+	                ObjectDumper.Write($"Year: {yearMonth.Year} Month: {yearMonth.Month} Orders count: {yearMonth.OrdersCount}");
 	            }
 	        }
         }
