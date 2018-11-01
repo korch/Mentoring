@@ -137,7 +137,9 @@ namespace SampleQueries
         [Description("This sample return all customers with begining orders date and Order By")]
         public void Linq006()
         {
-            var customers = dataSource.Customers.Where(c => c.PostalCode.Any(s => char.IsDigit(s)) || string.IsNullOrEmpty(c.Region) || !c.Phone.Contains("("))
+            var customers = dataSource.Customers
+                .Where(cu => !string.IsNullOrEmpty(cu.PostalCode))
+                .Where(c => c.PostalCode.Any(s => char.IsDigit(s)) || string.IsNullOrEmpty(c.Region) || !c.Phone.Contains("("))
                   .Select(c => new
                   {
                       customerName = c.CompanyName
@@ -151,20 +153,111 @@ namespace SampleQueries
 
         [Category("Restriction Operators")]
         [Title("Where - Task 007")]
-        [Description("This sample return all customers with begining orders date and Order By")]
+        [Description("This sample return all products with groups by Category and UnitsInStock with ordering by UnitCost for UnitsInStock group")]
         public void Linq007()
         {
-            var customers = dataSource.Customers.Where(c => c.PostalCode.Any(s => char.IsDigit(s)) || string.IsNullOrEmpty(c.Region) || !c.Phone.Contains("("))
-                  .Select(c => new
-                  {
-                      customerName = c.CompanyName
-                  });
+            var productGroups = dataSource.Products
+                .GroupBy(p => p.Category)
+                .Select(g => new
+                {
+                    Name = g.Key,
+                    ProductsByStock = g.GroupBy(g2 => g2.UnitsInStock)
+                        .Select(s => new
+                        {
+                            Name = s.Key,
+                            Products = s.OrderBy(o => o.UnitPrice)
+                        })
+                });
 
-            foreach (var customer in customers)
+            foreach (var group in productGroups)
             {
-                ObjectDumper.Write($"customerName: {customer.customerName}");
+                ObjectDumper.Write($"Product category: {group.Name}");
+                foreach (var productByStock in group.ProductsByStock)
+                {
+                    ObjectDumper.Write($"In Stock: {productByStock.Name}");
+                    foreach (var product in productByStock.Products)
+                    {
+                        ObjectDumper.Write($"Product name: {product.ProductName} Price: {product.UnitPrice}");
+                    }
+                }
             }
         }
 
+
+	    [Category("Restriction Operators")]
+	    [Title("Where - Task 008")]
+	    [Description("This sample return all products by three groups")]
+	    public void Linq008()
+	    {
+	        var groups = dataSource.Products
+	            .GroupBy(p => p.UnitPrice < 20 ? "Deshman"
+	                : p.UnitPrice < 50 ? "norm" : "Elita");
+
+	        foreach (var group in groups) {
+	            ObjectDumper.Write($"{group.Key}:");
+	            foreach (var product in group) {
+	                ObjectDumper.Write($"Product name: {product.ProductName} Price: {product.UnitPrice}\n");
+	            }
+	        }
+        }
+
+	    [Category("Restriction Operators")]
+	    [Title("Where - Task 009")]
+	    [Description("This sample return all products by three groups")]
+	    public void Linq009()
+	    {
+	        var cityGroups = dataSource.Customers
+	            .GroupBy(g => g.City)
+	            .Select(s => new {
+	                City = s.Key,
+	                AverageSum = s
+	                    .Average(a => a.Orders.Sum(o => o.Total)),
+	                AverageWanna = s
+	                    .Average(o => o.Orders.Count())
+	            });
+
+	        foreach (var city in cityGroups) {
+	            ObjectDumper.Write($"City:{city.City}, Average sum of orders: {city.AverageSum}, Average count of orders: {city.AverageWanna}");
+	        }
+        }
+
+	    [Category("Restriction Operators")]
+	    [Title("Where - Task 010")]
+	    [Description("Average year statistic of activity clients per month")]
+	    public void Linq010()
+	    {
+	        var statistic = dataSource.Customers
+	            .Select(c => new
+	            {
+	                c.CompanyName,
+	                Months = c.Orders.GroupBy(o => o.OrderDate.Month)
+	                    .Select(g => new { Month = g.Key, OrdersCount = g.Count() }),
+	                Years = c.Orders.GroupBy(o => o.OrderDate.Year)
+	                    .Select(g => new { Year = g.Key, OrdersCount = g.Count() }),
+	                YearMonth = c.Orders
+	                    .GroupBy(o => new { o.OrderDate.Year, o.OrderDate.Month })
+	                    .Select(g => new { g.Key.Year, g.Key.Month, OrdersCount = g.Count() })
+	            });
+
+	        foreach (var record in statistic)
+	        {
+	            ObjectDumper.Write($"Company name: {record.CompanyName}");
+	            ObjectDumper.Write("Months statistic:");
+	            foreach (var ms in record.Months)
+	            {
+	                ObjectDumper.Write($"Month: {ms.Month} Orders count: {ms.OrdersCount}");
+	            }
+	            ObjectDumper.Write("Years statistic:");
+	            foreach (var ys in record.Years)
+	            {
+	                ObjectDumper.Write($"Year: {ys.Year} Orders count: {ys.OrdersCount}");
+	            }
+	            ObjectDumper.Write("Year and month statistic:");
+	            foreach (var ym in record.YearMonth)
+	            {
+	                ObjectDumper.Write($"Year: {ym.Year} Month: {ym.Month} Orders count: {ym.OrdersCount}");
+	            }
+	        }
+        }
     }
 }
