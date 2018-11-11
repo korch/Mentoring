@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SampleSupport;
 using SampleQueries;
 using System.IO;
+using Task;
 
 // See the ReadMe.html for additional information
 namespace SampleQueries
@@ -29,11 +30,15 @@ namespace SampleQueries
 			harnesses.Add(linqHarness);
 						
 			Application.EnableVisualStyles();
-				
-			using (SampleForm form = new SampleForm("HomeWork - Mihail Romanov", harnesses))
-			{
-				form.ShowDialog();
-			}
+
+            //using (SampleForm form = new SampleForm("HomeWork - Mihail Romanov", harnesses))
+            //{
+            //	form.ShowDialog();
+            //}
+            using (var form = new GridViewForm())
+            {
+                form.ShowDialog();
+            }
 		}
 	}
 }
